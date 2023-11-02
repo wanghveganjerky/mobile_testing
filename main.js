@@ -75,7 +75,7 @@ fetchWeatherData();
 window.addEventListener('wheel', function(e) {
     e.preventDefault();
   }, { passive: false });
-
+  
   // Allow scrolling with arrow keys
   window.addEventListener('keydown', function(e) {
     if (e.key === 'ArrowUp') {
@@ -84,10 +84,29 @@ window.addEventListener('wheel', function(e) {
       window.scrollBy(0, 50); // Adjust the value as needed
     }
   });
-
+  
+  let startY;
+  
+  window.addEventListener('touchstart', function(e) {
+    startY = e.touches[0].clientY;
+  });
+  
   window.addEventListener('touchmove', function(e) {
+    const currentY = e.touches[0].clientY;
+    const diffY = startY - currentY;
+  
     e.preventDefault();
-    const scrollAmount = 10; // Adjust the value as needed
-    window.scrollBy(0, scrollAmount);
+    const scrollAmount = 200; // Adjust the value as needed
+  
+    if (diffY > 0) {
+      // Scrolling down
+      window.scrollBy(0, scrollAmount);
+    } else {
+      // Scrolling up
+      window.scrollBy(0, -scrollAmount);
+    }
   }, { passive: false });
+  
+
+  
   
