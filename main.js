@@ -68,3 +68,26 @@ async function fetchWeatherData() {
 }
 
 fetchWeatherData();
+
+
+
+
+window.addEventListener('wheel', function(e) {
+    e.preventDefault();
+  }, { passive: false });
+
+  // Allow scrolling with arrow keys
+  window.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowUp') {
+      window.scrollBy(0, -50); // Adjust the value as needed
+    } else if (e.key === 'ArrowDown') {
+      window.scrollBy(0, 50); // Adjust the value as needed
+    }
+  });
+
+  window.addEventListener('touchmove', function(e) {
+    e.preventDefault();
+    const scrollAmount = 10; // Adjust the value as needed
+    window.scrollBy(0, scrollAmount);
+  }, { passive: false });
+  
