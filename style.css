@@ -65,15 +65,6 @@ body {
   100% { transform: rotate(360deg); }
 }
 
-#canvasContainer {
-  /* display: none; */
-  position: absolute;
-  left: 0%;
-  top: -32%;
-  transform: translateX(-50%);
-  z-index: 1;
-}
-
 .textContainer {
   width: 40%;
   margin-top: 2%;
@@ -81,6 +72,14 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .scrollable-element {
+    height: 2vh; /* Adjust as needed */
+  }
+
   body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
