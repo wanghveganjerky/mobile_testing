@@ -49,7 +49,7 @@ async function fetchWeatherData() {
 
         const styleSheetContent2 = `
         .sunContainer {
-        animation-duration: ${100000 / fontWeight}s;  /* adjust the duration based on wind speed */
+        animation-duration: ${200000 / fontWeight}s;  /* adjust the duration based on wind speed */
         }
         `;
         const styleSheet2 = document.createElement("style");

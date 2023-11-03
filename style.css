@@ -7,6 +7,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="64" height="64"><circle cx="8" cy="8" r="7" fill="black"/></svg>') 8 8, auto;
+  font-family: 'Manrope', sans-serif;
 }
 
 body {
@@ -27,18 +28,6 @@ body {
   z-index: 1001;
 }
 
-#sun {
-  /* display: none;  */
-  position: fixed !important;
-  left: 22%;
-  top: 24%;
-  width: 85px;
-  height: 75px;
-  border-radius: 50%;
-  background: radial-gradient(circle at center, #FEC230 0%,#FED32E 15%, #FFE72C 25%,#FEE030 50%,#FBB634 75%, #F89736 100%);
-  z-index: 500;
-}
-
 .sunContainer {
   position:fixed;
   width: 100%;
@@ -52,11 +41,12 @@ body {
   position: absolute;
   top: 30%;
   left: 28%;
-  width: 120%;  /* Increase for longer blades */
-  height: 8px;  /* Adjust the height as per your requirement */
+  width: 400%;  /* Increase for longer blades */
+  height: 3px;  /* Adjust the height as per your requirement */
   background: radial-gradient(circle at center, #FEC230 0%,#FED32E 15%, #FFE72C 25%,#FEE030 50%,#FBB634 75%, #F89736 100%);
   transform-origin: 0% 50%;
-  z-index: 999;  /* Ensure this is lower than the z-index of #sun */
+  opacity: .5;
+  z-index: -1;  /* Ensure this is lower than the z-index of #sun */
    /* display: none; */
 }
 
@@ -69,6 +59,7 @@ body {
   width: 40%;
   margin-top: 2%;
   margin-left: 30%;
+  z-index: 1000;
 }
 
 @media screen and (max-width: 768px) {
@@ -85,12 +76,12 @@ body {
   }
 
   #logo {
-    font-size: 2em;  /* Adjusted font-size fosr mobile view */
+    font-size: 2em;  
   }
 
   #sun {
-    width: 30px;  /* Adjusted width for mobile view */
-    height: 30px;  /* Adjusted height for mobile view */
+    width: 30px;  
+    height: 30px;  
   }
 
   .textContainer {
@@ -100,29 +91,33 @@ body {
 }
 
 h2{
-  font-family: 'Manrope', sans-serif;
-  font-size: 1.1em;
+  font-size: 1.2em;
   line-height: 1.7;
   color:#000000;
+  z-index: 1000;
   /* display: none; */
 }
 
 h3{
-  font-family: "obviously-variable", sans-serif;
-  font-size: 10vh;
-  line-height: 0.65;
+  font-size: 5em;
+  line-height: 1;
+  color:#000000;
+  margin-bottom: 0;
+}
+
+h4{
+  font-size: 2.4em;
+  line-height: 1;
+  color:#777777;
+  font-style: italic;
+}
+
+h5{
+  font-size: 2em;
+  line-height: 1;
   color:#000000;
 }
 
-@keyframes breathe{
-  60%{
-    font-variation-settings: "wght" 900;  /* end of animation */
-  }
-
-  100%{
-    font-variation-settings: "wght" 100; /* begin of animation */
-  }
-}
 
 .transparent {
   opacity: 0;
