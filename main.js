@@ -109,4 +109,10 @@ window.addEventListener('wheel', function(e) {
   
 
   
-  
+  const slider = document.getElementById('mySlider');
+  const output = document.getElementById('sliderValue');
+
+  // Update the current slider value (each time you drag the slider handle)
+  slider.oninput = function() {
+      output.innerHTML = this.value;
+  }
